@@ -20,3 +20,5 @@ Route::get('/empleado/{id}', ['as'=>'empleado','uses'=>'EmpleadoController@get']
 Route::get('/departamentos', ['as'=>'departamentos','uses'=>'DepartamentoController@index']);
 Route::get('/departamento/{id}', ['as'=>'departamento','uses'=>'DepartamentoController@get']);
 Route::get('/estadisticas', ['as'=>'estadisticas','uses'=>'EstadisticaController@index']);
+Route::get('/eventos', ['as'=>'eventos','uses'=>'EventoController@index']);
+Route::get('/evento/{id}', ['as'=>'evento','uses'=>'EventoController@get']);

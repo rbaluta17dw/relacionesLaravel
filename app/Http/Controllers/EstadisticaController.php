@@ -29,7 +29,6 @@ class EstadisticaController extends Controller
     }
   }
 
-  
   public function index ()
   {
     // Recojo los datos de la base de datos y los meto en variables

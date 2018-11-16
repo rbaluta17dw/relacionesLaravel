@@ -23,4 +23,11 @@ class Proyecto extends Model
             es cualquiera de las dos partes */
         return $this->belongsToMany('App\Empleado');
     }
+    // La relacion de eventos con proyectos
+    public function eventos()
+    {
+        /* En una relacion M:N 'belongsToMany'
+            es cualquiera de las dos partes */
+        return $this->belongsToMany('App\Evento');
+    }
 }
