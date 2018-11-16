@@ -68,7 +68,7 @@
             text-align: left;
           }
           input {
-          
+
             padding:10px;
             box-sizing:border-box;
             background:none;
@@ -107,3 +107,4 @@
 
 
     </style>
+    <link href="{{asset('css/main.css')}}" rel="stylesheet" type="text/css">

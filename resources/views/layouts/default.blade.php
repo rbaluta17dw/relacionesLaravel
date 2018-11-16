@@ -29,6 +29,7 @@
               <a href="{{route('proyectos')}}">Proyectos</a>
 							<a href="{{route('empleados')}}">Empleados</a>
 							<a href="{{route('departamentos')}}">Departamentos</a>
+							<a href="{{route('estadisticas')}}">Estadisticas</a>
           </div>
           <hr><br><br>
 					<div class="op">
