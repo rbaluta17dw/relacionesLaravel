@@ -6,8 +6,8 @@
 
   <h2>Evento: {{$evento->nombre}}</h2>
   <h3>Lugar: {{$evento->lugar}}</h3>
-  <h3>Fecha inicio: {{$evento->fechainicio}}</h3>
-  <h3>Fecha fin: {{$evento->fechafin}}</h3>
+  <h3>Fecha inicio: {{ \Carbon\Carbon::parse($evento->fechainicio)->format('d/m/Y')}}</h3>
+  <h3>Fecha fin: {{ \Carbon\Carbon::parse($evento->fechafin)->format('d/m/Y')}}</h3>
   @if(isset($evento->proyectos))
   <h3>Proyectos en el evento</h3>
   @foreach($evento->proyectos as $proyecto)
