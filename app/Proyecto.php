@@ -21,7 +21,7 @@ class Proyecto extends Model
     {
         /* En una relacion M:N 'belongsToMany'
             es cualquiera de las dos partes */
-        return $this->belongsToMany('App\Empleado');
+        return $this->belongsToMany('App\Empleado')->withPivot('fechainicio', 'fechafin');
     }
     // La relacion de eventos con proyectos
     public function eventos()

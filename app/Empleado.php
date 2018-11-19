@@ -21,7 +21,7 @@ class Empleado extends Model
   {
     /* En una relacion M:N 'belongsToMany'
     es cualquiera de las dos partes */
-    return $this->belongsToMany('App\Proyecto');
+    return $this->belongsToMany('App\Proyecto')->withPivot('fechainicio', 'fechafin');
   }
   // La relaciones empleado con departamento
   public function departamento()

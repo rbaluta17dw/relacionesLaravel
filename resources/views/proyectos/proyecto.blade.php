@@ -10,7 +10,8 @@
   @if(isset($proyecto->empleados))
   <h3>Colaboradores:</h3>
   @foreach($proyecto->empleados as $empleado)
-  <p><a class="link" href="{{route('empleado',$empleado->id)}}">{{$empleado->nombre}}</a></p>
+
+  <p><a class="link" href="{{route('empleado',$empleado->id)}}">{{$empleado->nombre}}</a> Fecha Inicio: {{ \Carbon\Carbon::parse($empleado->pivot->fechainicio)->format('d/m/Y')}} Fecha Fin: {{ \Carbon\Carbon::parse($empleado->pivot->fechafin)->format('d/m/Y')}}</p>
   @endforeach
   @else
 
