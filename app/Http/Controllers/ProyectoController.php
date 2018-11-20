@@ -6,6 +6,7 @@ y lo envia a la pagina.
 */
 namespace App\Http\Controllers;
 use App\Proyecto;
+use App\Empleado;
 use Illuminate\Http\Request;
 
 class ProyectoController extends Controller
@@ -14,7 +15,9 @@ class ProyectoController extends Controller
   public function index ()
   {
     $proyectos = Proyecto::all();
-    return view ('proyectos.index',['proyectos' => $proyectos]);
+    $empleados = Empleado::all();
+    return view ('proyectos.index',['proyectos' => $proyectos,
+                                    'empleados' => $empleados]);
   }
   // Coge un proyecto en concreto y lo envia a la pagina proyecto
   public function get ($id)
@@ -23,4 +26,13 @@ class ProyectoController extends Controller
     return view ('proyectos.proyecto',['proyecto' => $proyecto]);
   }
 
+  public function add (Request $request)
+  {
+    $nombre = $request->input('nombre');
+    $titulo = $request->input('titulo');
+    $fechainicio = $request->input('fechainicio');
+    $fechafin = $request->input('fechafin');
+    
+    return $this->index();
+  }
 }

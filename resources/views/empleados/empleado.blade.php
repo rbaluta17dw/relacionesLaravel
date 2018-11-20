@@ -10,6 +10,9 @@
 @else
 <h3>No es responsable de ningun proyecto</h3>
 @endif
+@if(isset($empleado->departamentoJefe))
+<h3>Jefe del Departamento: <a class="link" href="{{route('departamento',$empleado->departamentoJefe->id)}}">{{$empleado->departamentoJefe->nombre}}</a></h3>
+@endif
 @if(isset($empleado->proyectos))
 <h3>Colabora en los siguientes proyectos: </h3>
 @foreach($empleado->proyectos as $proyecto)

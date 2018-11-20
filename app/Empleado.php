@@ -29,4 +29,10 @@ class Empleado extends Model
     // En un relacion 1:N 'belongsTo' es la parte 1
     return $this->belongsTo('App\Departamento');
   }
+  // La relaciones jefe con departamento
+  public function departamentoJefe(){
+    /* En una relacion 1:1 'hasOne' es la parte
+    a la cual le pertenece un departamento */
+    return $this->hasOne('App\Departamento','jefe_id');
+  }
 }

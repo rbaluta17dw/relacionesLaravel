@@ -15,4 +15,8 @@ class Departamento extends Model
     // En la relacion 1:N 'hasMany' es N
     return $this->hasMany('App\Empleado');
   }
+  // La relacion de departamento con jefe
+  public function jefe(){
+    return $this->belongsTo('App\Empleado','jefe_id');
+  }
 }
