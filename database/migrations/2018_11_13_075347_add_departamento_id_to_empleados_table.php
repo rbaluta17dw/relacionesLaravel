@@ -14,7 +14,11 @@ class AddDepartamentoIdToEmpleadosTable extends Migration
     public function up()
     {
         Schema::table('empleados', function (Blueprint $table) {
-          $table->integer('departamento_id');
+          $table->integer('departamento_id')->unsigned();
+
+          $table->foreign('departamento_id')
+          ->references('id')->on('departamentos')
+          ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -26,7 +30,7 @@ class AddDepartamentoIdToEmpleadosTable extends Migration
     public function down()
     {
         Schema::table('empleados', function (Blueprint $table) {
-            //
+            Schema::dropColumn('departamento_id');
         });
     }
 }

@@ -14,7 +14,11 @@ class AddEmpleadoIdToProyectosTable extends Migration
     public function up()
     {
         Schema::table('proyectos', function (Blueprint $table) {
-            $table->integer('empleado_id');
+            $table->integer('empleado_id')->unsigned();
+
+            $table->foreign('empleado_id')
+            ->references('id')->on('empleados')
+            ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -26,6 +30,7 @@ class AddEmpleadoIdToProyectosTable extends Migration
     public function down()
     {
         Schema::table('proyectos', function (Blueprint $table) {
+          Schema::dropColumn('emleado_id');
         });
     }
 }
